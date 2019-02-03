@@ -8,12 +8,28 @@
 
 .btn {
   background-color: #91171f;
-  /* #5B0082, #600047, #44001A */
+  /* #5B0082, #600047, #44001A, #EDC421 */
 
+}
+
+.btn-secondary {
+  float: right;
 }
 
 #game-rules {
   margin-top: 10px;
+}
+
+.card {
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav-link {
+  color: #91171f;
 }
 
 
