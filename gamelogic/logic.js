@@ -125,5 +125,4 @@ const overthrowCheck = (currentUser, bsCaller, actionChosen) => {
         // remove 1 influence from current
         // update currentUser counter
         // }
-}
-
+};
