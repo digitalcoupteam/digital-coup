@@ -12,19 +12,38 @@ module.exports = function(app) {
   app.post("/api/newUser", function(req, res) {
     const newUser = req.body;
     db.User.create({
-      userName: newUser.userName,
+      email: newUser.email,
       password: newUser.password,
-      email: newUser.email
+      userName: newUser.userName
     }).then(function(result) {
       res.json(result);
       
     });
   });
 
+
+  app.post('/api/login', function(req, res) {
+    const attemptedLogin = req.body;
+    console.log(attemptedLogin.loginUsername)
+    db.User.findOne({
+      where: {
+          userName: attemptedLogin.loginUsername,
+          password: attemptedLogin.loginPassword
+      }
+  }).then(function (result) {
+      if (result) {
+        console.log('user exists')
+        res.json(result);  
+      } else {
+        console.log('no user exists')
+      }
+  });
+})
+
   // Delete an example by id
-//   app.delete("/api/examples/:id", function(req, res) {
-//     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-//       res.json(dbExample);
-//     });
-//   });
+  app.delete("/api/examples/:id", function(req, res) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
 };
