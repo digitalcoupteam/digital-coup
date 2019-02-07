@@ -63,66 +63,163 @@ const overthrow = (currentUser, bsCaller, actionChosen) => {
 
 const overthrowCheck = (currentUser, bsCaller, actionChosen) => {
 
-// FOREIGN AID
+};
 
-    // if (actionChosen === "Foreign Aid") && (bsCaller.inf1.name==="Duke" || bsCaller.inf2.name==="Duke") {
-        // remove 1 influence from currentUser
-        // update to database with new Current user
-        // }
-    // if (actionChosen === "Foreign Aid") && !(bsCaller.inf1.name==="Duke" || bsCaller.inf2.name==="Duke") {
-        // remove 1 influence from bsCaller
-        // run foreignAid(currentUser)
-        // update to database with new Current user
-        // }
+// ========================================================================================================
+// LITTLE ACTIONS
+// ========================================================================================================
 
-// ASSASSINATE
+const getCoin = (whoGetsCoin, howMuch) => {
+    // GET whoGetsCoin.eco
+    // whoGetsCoin.eco += howMuch
+    // PUT whoGetsCoin.eco
+};
 
-    // if (actionChosen === "Assassinate") && (bsCaller.inf1.name==="Contessa" || bsCaller.inf2.name==="Contessa") {
-        // remove 1 influence from currentUser
-        // remove 3 economy from currentUser
-        // update to database with new Current user
-        // }
-    // if (actionChosen === "Assassinate") && !(bsCaller.inf1.name==="Contessa" || bsCaller.inf2.name==="Contessa") {
-        // remove 1 influence from bsCaller
-        // run assassinate(currentUser, target)
-        // update to database with new Current user
-        // }
-    // needs more conditions possibly
+const redrawInf = (whoIsRedrawing, whichInfluenceIsRedrawn) => {
+    // GET courtDeck
+    // add whichInfluenceIsRedrawn to courtDeck
+    // PUT courtDeck
+};
 
-// STEAL
-    
-    // if (actionChosen === "Steal") && (bsCaller.inf1.name==="Captain" || bsCaller.inf2.name==="Captain" || bsCaller.inf1.name==="Ambassador" || bsCaller.inf2.name==="Ambassador") {
-        // remove 1 influence from currentUser
-        // update to database with new Current user
-        // }
-    // if (actionChosen === "Steal") && !(bsCaller.inf1.name==="Captain" || bsCaller.inf2.name==="Captain" || bsCaller.inf1.name==="Ambassador" || bsCaller.inf2.name==="Ambassador") {
-        // remove 1 influence from bsCAller
-        // update to database with new Current user
-        // run steal(currentUser, target)
-        // }
-    // needs more conditions.
-    // current has captain and bsCaller has ambassador or captain ===> new turn
-    // current has captain and bsCaller 
+const loseInf = (whoLosesInfluence) => {
+    // GET whoLoses.inf1 and whoLoses.inf2
+    // ask which influence the losing user wants to lose
+    // PUT updated influence
+};
 
-// EXCHANGE
-    
-    // if (actionChosen === "Exchange") && !(currentUser.inf1.name==="Ambassador" || currentUser.inf2.name==="Ambassador") {
-        // remove 1 influence from currentUser
-        // update to database with new Current user
-        // }
-    // if (actionChosen === "Exchange") && (currentUser.inf1.name==="Ambassador" || currentUser.inf2.name==="Ambassador") {
-        // remove 1 influence from bsCaller
-        // run exchange(currentUser)
-        // update to database with new Current user
-        // }
+const getLost = (thisUserIsDunzo) => {
+    // PUT thisUserIsDunzo.isAlive = false
+    // They are out of game
+};
+
+const nextTurn = (currentUserTurn) => {
+    // GET list of users still alive
+    // if currentUserTurn === user4
+        // userTurn = user1
+    // else increment currentUserTurn
+    // PUT currentUserTurn
+};
+
+const exchangeCards = (user) = {
+    // GET influences
+    // User chooses which influence to offer for exchange
+    // GET 2 random cards from COURT DECK
+    // Including offeredInfluence and above 2 randoms, choose 1 of the 3 influences to keep
+    // ADD refused cards to COURT DECK
+};
+
+const stealYourCoins = (user, target) = {
+    // GET economy of target
+    // -2 coins from economy of target
+    // PUT new economy of target
+    // GET economy of user
+    // +2 coins to user
+    // PUT new economy of user
+};
+
+// ========================================================================================================
+// BIG ACTIONS
+// ========================================================================================================
+
+const wantSomeForeignAid = (user, bsCaller) => {
+    // switch cases
+
+        // counter with Duke is accepted
+            // no action
         
-// TAX
+        // no counteractions taken
+            // user +2 coins ( getCoin(user, 2) )
 
-    // if (actionChosen === "Tax") && (currentUser.inf1.name==="Duke" || currentUser.inf2.name==="Duke") {
-        // run tax(currentUser) 
-        // }
-    // if (actionChosen === "Tax") && !(currentUser.inf1.name==="Duke" || currentUser.inf2.name==="Duke") {
-        // remove 1 influence from current
-        // update currentUser counter
-        // }
+        // truthful bsCaller with a Duke gets CC'ed
+            // bsCaller Redraws ( redrawInf(bsCaller, Duke) )
+            // User -1 INF ( loseInf(user) )
+
+        // Dishonest bsCaller without Duke gets CC'ed
+            // bsCaller -1 INF ( loseInf(bsCaller) )
+            // user +2 coins ( getCoin(user, 2) )
+};
+
+const wannaTax = (user, bsCaller) => {
+    // switch cases
+
+        // no counteractions taken
+            // user +3 coins ( getCoin(user, 3) )
+
+        // BS called on !Duke
+            // User -1 INF ( loseInf(user) )
+
+        // BS called on a true Duke
+            // bsCaller -1 INF (loseInf(bsCaller))
+            // user +3 coins (getCoin(user, 3))
+            // User redraws ( redrawInf(user, Duke) )
+};
+
+const wannaAssassinate = (user, bsCaller, targettedUser) => {
+    // switch cases
+
+        // user has Assassin and bs is called
+            // User pays 3 coins to treasury ( getCoins(user, -3) )
+            // bsCaller loses all Influences and has lost ( getLost(bsCaller) )
+            // user redraws with assassin card ( redrawInf (user, assassin) )
+
+        // user CC'ed a dishonest bsCaller that doesnt have Contessa
+            // User pays 3 coins to treasury ( getCoins(user, -3) )
+            // bsCaller loses all Influences and has lost ( getLost(bsCaller) )
+
+        // Assassination accepted
+            // User pays 3 coins to treasury ( getCoins(user, -3) )
+            // targettedUser loses 1 INF ( loseInf(targettedUser) )
+
+        // BS called and !Assassin
+            // User pays 3 coins to treasury ( getCoins(user, -3) )
+            // User loses 1 INF ( loseInf(user) )
+
+        // bsCaller declares block with Contessa and user accepts
+            // User pays 3 coins to treasury ( getCoins(user, -3) )
+
+        // user CC'ed an honest bsCaller that does have Contessa
+            // User pays 3 coins to treasury ( getCoins(user, -3) )
+            // User loses 1 INF ( loseInf(user) )
+            // bsCaller redraws with Contessa card ( redrawInf(bsCaller, Contessa) )
+};
+
+const wannaExchange = (user) => {
+    // switch cases
+
+        // exchange accepted
+            // exchangeCards(user)
+
+        // BS is called but user has Ambassador
+            // bsCaller loses 1 INF ( loseInf(bsCaller) )
+            // User redraws 1 INF ( redrawInf(user, Ambassador) )
+            // exchangeCards(user)
+
+        // BS is called and !Ambassador
+            // user loses 1 INF ( loseInf(user) )
+};
+
+const wannaSteal = (user, target) => {
+    // switch cases
+
+        // BS Called and Duke is true
+            // Take 2 coins from target ( stealYourCoins(user, target) )
+            // bsCaller loses 1 INF ( loseInf(bsCaller) )
+            // User redraws ( redrawInf(user, Duke) )
+
+        // BS called and !duke
+            // user loses 1 INF ( loseInf(user) )
+        
+        // Block is accepted
+            // no action
+
+        // block is cc'ed and bsCaller has ambassador or captain
+            // bsCaller redraws their ambassador or captain card ( redrawInf(bsCaller, CAPTAIN OR AMBASSADOR) )
+            // user loses 1 INF ( loseInf(user) )
+
+        // block is cc'ed and !ambassador and !captain
+            // Take 2 coins from target ( stealYourCoins(user, target) )
+            // bsCaller loses 1 INF ( loseInf(bsCaller) )
+
+        // Steal is accepted
+            // Take 2 coins from target ( stealYourCoins(user, target) )
 };
