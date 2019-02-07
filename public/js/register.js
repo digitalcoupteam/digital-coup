@@ -17,7 +17,7 @@ $("#register").on("submit", function (event) {
   } else {
     $.post('/api/newUser', newUser)
       .then(() => {
-        // window.location.href = "/lobbies";
+        window.location.href = "/";
 
 
       })
