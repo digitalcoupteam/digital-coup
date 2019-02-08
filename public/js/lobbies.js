@@ -20,6 +20,12 @@ connection.connect(function(err) {
 });
 
 function joinGame() {
-    var query = connection.query
+    var query = connection.query(
+        "INSERT INTO games SET ?",
+        {
+            
+        }
+
+    )
 
 }
