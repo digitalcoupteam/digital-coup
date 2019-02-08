@@ -8,11 +8,21 @@ $("#loginUser").on("submit", function (event) {
 
 
 
-    $.post('/api/login', loggerAttempt)
+    $.post('/login', loggerAttempt)
       .then((result) => {
-          console.log(result);
-        window.location.href = "/lobbies";
-debugger;
+        if(result == null) {
+            console.log('wrong creds')
+              $('#error-msg').html('credentials invalid')
+              $('#loginUsername').val("");
+              $('#loginPassword').val("");
+
+        } else {
+            console.log(result);
+            window.location.href = "/lobbies";
+        }
+
+
+          
 
       })
 });
