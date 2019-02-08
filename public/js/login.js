@@ -18,7 +18,7 @@ $("#loginUser").on("submit", function (event) {
 
         } else {
             console.log(result);
-            window.location.href = "/lobbies";
+            window.location.href = "/options.html";
         }
 
 
