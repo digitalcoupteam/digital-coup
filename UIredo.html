@@ -1,0 +1,149 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/populate.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+
+    <br>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="container-fluid">
+                <!--This card acts as the scoreboard-->
+                <div class="card">
+                    <div class="container">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <i class="far fa-user"></i>
+                                    User
+                                </th>
+                                <th scope="col">
+                                    <i class="fas fa-users"></i>
+                                    Influences
+                                </th>
+                                <th scope="col">
+                                    <i class="fas fa-coins"></i>
+                                    Coins
+                                </th>
+                                <th scope="col">
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+
+            <div class="col">
+                <!--This card is specifically for the player's hand-->
+                <div class="card"> 
+                    <div class="card-header text-center">
+                        <h6>Your Hand</h6>
+                    </div>
+                    <div class="card-body mx-auto">
+                        <div class="card" id="influence1">
+                            <!--add img of card 1-->
+                        </div>
+                        <br>
+                        <div class="card" id="influence2">
+                            <!--add img of card 2-->
+                        </div>
+                    </div>
+                </div>
+                <!--End of player's hand--> 
+            </div>
+
+            <br>
+
+            <div class="col">
+                <!--This card is the action feed-->
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h6>History</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="container">
+                            <!--This container will act as the action feed-->
+                            <!--E.G {{Players}} uses {{Action}} on {{Target}}-->
+                            <!--Maybe up to 5 or 10 recorded actions and then remove-->
+                            <div class="alert" role="alert">
+                                <!---->
+                            </div>
+                            <div class="alert" role="alert">
+                                <!---->
+                            </div>
+                            <div class="alert" role="alert">
+                                <!---->
+                            </div>
+                            <div class="alert" role="alert">
+                                <!---->
+                            </div>
+                            <div class="alert" role="alert">
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <!--Just contains container to open prompts-->
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#overthrowModal" data-backdrop="static" data-keyboard="false">Confirm</button>
+
+        <div class="container">
+            <div class="modal fade" id="overthrowModal" tabindex="-1" role="dialog" aria-labelledby="overthrowCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body mx-auto">
+                            <p>
+                                <!--Open a prompt for overthrow-->
+                                <!--E.G: {{Player}} uses {{Action}}-->
+                                <!--"Would you like to overthrow"-->
+                            </p>
+
+                            <button type="button" class="btn btn-success" data-dismiss="modal">
+                                <i class="fas fa-check"></i>
+                                <p>Allow</p>
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                <i class="fas fa-times"></i>
+                                <p>Overthrow</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>    
+</body>
+</html>
