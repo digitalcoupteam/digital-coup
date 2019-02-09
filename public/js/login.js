@@ -8,7 +8,7 @@ $("#loginUser").on("submit", function (event) {
 
 
 
-    $.post('/login', loggerAttempt)
+    $.post('/login/:username', loggerAttempt)
       .then((result) => {
         if(result == null) {
             console.log('wrong creds')
@@ -17,9 +17,10 @@ $("#loginUser").on("submit", function (event) {
               $('#loginPassword').val("");
 
         } else {
-            console.log(result);
             const newStoredName = loggerAttempt.loginUsername;
-            sessionStorage.setItem('lobbyCreator', newStoredName);
+            sessionStorage.setItem('user1', newStoredName);
+            const username = loggerAttempt.loginUsername; 
+            console.log(result);
             window.location.href = "/options.html";
         }
 

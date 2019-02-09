@@ -22,7 +22,8 @@ module.exports = function (app) {
   });
 
 
-  app.post('/login', function (req, res) {
+  app.post('/login/:userName', function (req, res) {
+    const userName = req.params.userName;
     const attemptedLogin = req.body;
     console.log(attemptedLogin.loginUsername)
     db.User.findOne({
@@ -39,6 +40,13 @@ module.exports = function (app) {
         res.json(result);
       }
     });
+  });
+
+  app.get('/api/lobbies/:lobbyId/:currentUser', (req, res)=> {
+      const lobbyId = req.params.lobbyId;
+      const currentUser = req.params.currentUser;
+
+
   });
 
 
@@ -71,4 +79,4 @@ app.get('/api/lobbies/all', function(req, res) {
 //       res.json(dbExample);
 //     });
 //   });
-// };
+};

@@ -4,7 +4,7 @@ $('document').ready(() => {
 
         const newCreatedLobby = {
             newLobbyName: $('#newLobbyName').val().trim(),
-            user1: sessionStorage.getItem('lobbyCreator')
+            user1: sessionStorage.getItem('user1')
         }
         console.log(newCreatedLobby);
 
@@ -23,13 +23,14 @@ $('document').ready(() => {
 
 
 $("#joinGameBtn").on('click', () => {
+    
+    $.get('/api/lobbies/:lobbyid/:currentUser')
 
+    const nextJoinedUser = {
 
-    const newJoinedUser2 = {
-        
     }
 
-    sessionStorage.setItem('user2', newJoinedUser2);
+    sessionStorage.setItem('user2', nextJoinedUser);
 
     window.location.href = "/lobbies.html";
 });
