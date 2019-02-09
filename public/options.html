@@ -3,8 +3,100 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Overthrow</title>
+    <title>B.Y.O.G.</title>
     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">B.Y.O.G.</h1>
+            <p class="lead">Bring Your Own Game</p>
+        </div>
+        <div class="container" id="navigation">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="options.html" class="btn btn-primary btn-lg">Home</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="overthrow/overthrow-rules-influence.html" class="btn btn-primary btn-lg">Overthrow</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="murder-mystery/murder-mystery-rules.html" class="btn btn-primary btn-lg">Murder Mystery</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="tx-hold/tx-hold-rules.html" class="btn btn-primary btn-lg">Texas Hold'em</a>
+                </div>
+            
+
+
+                <!-- <div class="col-md-4">
+                    Button trigger modal
+                    <button type="button" id="createGameBtn" class="btn btn-primary" data-toggle="modal" data-target="#createModal">
+                        Create new game
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    Button trigger modal
+                    <button type="button" id="joinGameBtn" class="btn btn-primary">
+                        Join a game
+                    </button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Create a New Game!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter new lobby name" id="newLobbyName"
+                            aria-label="newLobbyName" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="newLobbyNameBtn">Button</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+        <script src="js/options.js"></script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Overthrow</title>
+    Latest compiled and minified CSS
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
@@ -20,14 +112,14 @@
         <div class="container" id="navigation">
             <div class="row">
                 <div class="col-md-4">
-                    <!-- <a href="index.html" class="btn btn-primary btn-lg">Home</a> -->
+                    <a href="index.html" class="btn btn-primary btn-lg">Home</a>
                 </div>
                 <div class="col-md-4">
-                    <!-- Button trigger modal -->
+                    Button trigger modal
                     <button type="button" id="createGameBtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createModal">
                         Create a Game
                     </button>
-                    <!-- Button trigger modal -->
+                    Button trigger modal
                     <a href="lobbies.html" class="btn btn-primary btn-lg">Join a Game</a>
                 </div>
                 <div class="col-md-4">
@@ -36,7 +128,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    Modal
     <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -85,4 +177,4 @@
         <script src="js/options.js"></script>
 </body>
 
-</html>
+</html> -->

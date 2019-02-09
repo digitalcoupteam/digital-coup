@@ -8,6 +8,7 @@
 
 .btn {
   background-color: #91171f;
+  border-color: black;
   /* #5B0082, #600047, #44001A, #EDC421 */
 
 }
@@ -30,6 +31,19 @@ ul {
 
 .nav-link {
   color: #91171f;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: darkgrey;
+  border-color: black;
+}
+
+.btn-primary:active {
+  background-color: lightgray;
 }
 
 /* .jumbotron {
