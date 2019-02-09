@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+            <title>B.Y.O.G.</title>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../styles/styles.css">
+    </head>
+
+    <body>
+        
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">TEXAS HOLD'EM</h1>
+                    <p class="lead">Bet, raise, call, and fold</p>
+            </div>
+            <div class="container" id="navigation">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="../options.html" class="btn btn-primary btn-lg">Home</a>
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <!-- Button trigger modal -->
+                        <button type="button" id="createGameBtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createModal">
+                            Create a Game
+                        </button>
+                        <!-- Button trigger modal -->
+                        <a href="../lobbies.html" class="btn btn-primary btn-lg">Join a Game</a>
+                    </div>
+        
+                    <!-- <div class="col-md-6">    
+                    </div>
+                    <div class="col-md-3">
+                        <a href="login.html" class="btn btn-primary btn-lg">Login or Sign Up</a>
+                    </div> -->
+                </div>
+            </div>        
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="../tx-hold/tx-hold-rules.html">Rules</a>
+                </li>                 
+                </ul>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title">Rules</h1>
+                <div class="card-text">
+                    <h4>Lorem</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis urna in massa tincidunt mattis. Morbi lobortis odio at mollis bibendum. Suspendisse sit amet orci vel mauris cursus viverra. Maecenas et sapien efficitur sem scelerisque suscipit. In tempor massa ut mi auctor, in pellentesque risus posuere. Nam aliquam posuere neque eu elementum. In eget efficitur tortor, tempus commodo augue. Proin congue sollicitudin vulputate. Nam sed euismod tellus, nec porta massa. Donec nisi sapien, porttitor rhoncus ante non, euismod aliquam tortor. Fusce venenatis imperdiet eros, eu mattis neque vehicula a. Pellentesque blandit mauris purus, aliquet maximus sem scelerisque non. Etiam vestibulum molestie nibh, ut mollis urna sollicitudin id. Proin ut viverra nisi, vel pellentesque eros. Integer sed arcu eget ipsum condimentum eleifend.
+                    </p>
+                    <br>
+                    <h4>Ipsum</h4>
+                    <p>Fusce vehicula pretium tellus, et dignissim felis accumsan id. Aenean quis imperdiet dui. Morbi aliquam erat metus, nec finibus massa pellentesque non. Nulla consectetur arcu ac arcu scelerisque, at facilisis ligula dignissim. Suspendisse massa velit, eleifend at lectus a, lacinia bibendum dolor. Phasellus auctor orci in nulla tempus, at vestibulum nunc aliquam. Suspendisse faucibus leo non tortor commodo congue ut id orci.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Create a New Game!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <select class="custom-select" id="inputGroupSelect02">
+                                <option selected>Select a Game to Play</option>
+                                <option value="1">Overthrow</option>
+                                <option value="2">Clue</option>
+                                <option value="3">Texas Hold'em</option>
+                            </select>
+                            <div class="input-group-append">
+                                <label class="input-group-text" for="inputGroupSelect02">Games</label>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Enter new lobby name" id="newLobbyName"
+                                aria-label="newLobbyName" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" id="newLobbyNameBtn">Create!</button>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+        <script src="../js/options.js"></script>
+
+    </body>
+</html>
