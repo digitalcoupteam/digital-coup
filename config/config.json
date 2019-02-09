@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Baritone2018*",
-    "database": "user_logins",
+    "database": "digital_coup",
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql"
