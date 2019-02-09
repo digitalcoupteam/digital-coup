@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-            <title>Overthrow</title>
-            <!-- Latest compiled and minified CSS -->
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="styles/styles.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Overthrow</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
 
-    <body>
-        
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">OVERTHROW</h1>
-                    <p class="lead">Manipulate, bribe and bluff your way into absolute power</p>
-            </div>
-            <!-- <div class="container" id="navigation">
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">OVERTHROW</h1>
+            <p class="lead">Manipulate, bribe and bluff your way into absolute power</p>
+        </div>
+        <!-- <div class="container" id="navigation">
                 <div class="row">
                     <div class="col-md-3">
                         <a href="index.html" class="btn btn-primary btn-lg">Home</a>
                     </div>
                 </div>
             </div>         -->
-        </div>
+    </div>
 
-        <div class="card text-center">
-            <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs">
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Rules</a>
                 </li>
@@ -38,25 +38,33 @@
                 <li class="nav-item">
                     <a class="nav-link" href="game-history.html">Games History</a>
                 </li>
-                           
-                </ul>
-            </div>
-            <div class="card-body">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                            <th scope="col">Game #</th>
-                            <th scope="col">Player 1</th>
-                            <th scope="col">Player 2</th>
-                            <th scope="col">Player 3</th>
-                            <th scope="col">Player 4</th>
-                            <th scope="col">Join</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-            </div>
+
+            </ul>
         </div>
-    </body>
+        <div class="card-body">
+            <table class="table table-striped" >
+                <thead>
+                    <tr>
+                        <th scope="col">Game Name</th>
+                        <th scope="col">Player 1</th>
+                        <th scope="col">Player 2</th>
+                        <th scope="col">Player 3</th>
+                        <th scope="col">Player 4</th>
+                        <th scope="col">Join</th>
+                    </tr>
+                </thead>
+                <tbody id="lobby-table">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+<script src="js/lobby.js"></script>
+
 </html>
