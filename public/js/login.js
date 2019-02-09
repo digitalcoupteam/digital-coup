@@ -19,7 +19,7 @@ $("#loginUser").on("submit", function (event) {
         } else {
             console.log(result);
             const newStoredName = loggerAttempt.loginUsername;
-            sessionStorage.setItem('username', newStoredName);
+            sessionStorage.setItem('lobbyCreator', newStoredName);
             window.location.href = "/options.html";
         }
 

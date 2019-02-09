@@ -5,9 +5,4 @@ $('document').ready(() => {
             $('#lobby-table').html(`<tr><td>${data[i].lobbyName}</td><td>${data[i].user1}<td></tr>`);
         }
     })
-
-
-
-
-
 });
