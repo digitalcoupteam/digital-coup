@@ -22,8 +22,8 @@ module.exports = function (app) {
   });
 
 
-  app.post('/login/:userName', function (req, res) {
-    const userName = req.params.userName;
+  app.post('/login', function (req, res) {
+    // const userName = req.params.userName;
     const attemptedLogin = req.body;
     console.log(attemptedLogin.loginUsername)
     db.User.findOne({
@@ -42,12 +42,12 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/api/lobbies/:lobbyId/:currentUser', (req, res)=> {
-      const lobbyId = req.params.lobbyId;
-      const currentUser = req.params.currentUser;
+  // app.get('/api/lobbies/:lobbyId/:currentUser', (req, res)=> {
+  //     const lobbyId = req.params.lobbyId;
+  //     const currentUser = req.params.currentUser;
 
 
-  });
+  // });
 
 
   app.post('/api/lobbies', function (req, res) {
@@ -59,6 +59,21 @@ module.exports = function (app) {
     }).then(function (result) {
       res.json(result);
     });
+});
+
+
+app.put('/api/lobbies', function (req, res) {
+  const lobby = req.body;
+
+  console.log(req.body);
+  
+  // db.Lobby.create({
+  //   lobbyName: lobby.newLobbyName,
+  //   user1: lobby.user1
+
+  // }).then(function (result) {
+  //   res.json(result);
+  // });
 });
 
 app.get('/api/lobbies/all', function(req, res) {

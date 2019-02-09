@@ -8,7 +8,7 @@ $("#loginUser").on("submit", function (event) {
 
 
 
-    $.post('/login/:username', loggerAttempt)
+    $.post('/login', loggerAttempt)
       .then((result) => {
         if(result == null) {
             console.log('wrong creds')
@@ -18,8 +18,8 @@ $("#loginUser").on("submit", function (event) {
 
         } else {
             const newStoredName = loggerAttempt.loginUsername;
-            sessionStorage.setItem('user1', newStoredName);
-            const username = loggerAttempt.loginUsername; 
+            sessionStorage.setItem('currentUser', newStoredName);
+            // const username = loggerAttempt.loginUsername; 
             console.log(result);
             window.location.href = "/options.html";
         }
