@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const mysql2 = require('mysql2');
-const sequelize = require('sequelize');
+const Sequelize = require('sequelize');
+const userLogins = require('../models/userLogins');
+
+// SOCKETS
 
         
 const userInfo = require('userInfo');
@@ -18,6 +21,20 @@ const userInfo = require('userInfo');
 // Upon game beginning
 const gameStart = (user1, user2, user3, user4) => {
     // update each users economy to 2 in (database)
+    for (i=1; i<5; i++) {
+        // update each users economy to 2 in (database)
+        db.gameInfo.update({
+            economy: 2,
+
+        }, {
+            where: {
+                id: user${i}
+            }
+        })
+
+
+    }
+    
 
     // grab available cards in court deck (database)
         // take 1 card (random) from court deck and add to user inf 1 with inHand true
@@ -121,22 +138,41 @@ const stealYourCoins = (user, target) = {
 // BIG ACTIONS
 // ========================================================================================================
 
-const wantSomeForeignAid = (user, bsCaller) => {
+const wantSomeForeignAid = (user, bsCaller, action, counterAction, cced) => {
+    
     // switch cases
+    switch(action && counterAction && cced) {
 
         // counter with Duke is accepted
+        case (action === "ForeignAid") && (counterAction === "Duke") && (cced === false) :
+            nextTurn(user);
             // no action
-        
+            break;
+ 
         // no counteractions taken
+        case (action === "ForeignAid") && (counterAction === "none") && (cced === false) :
             // user +2 coins ( getCoin(user, 2) )
+            getCoin(user, 2);
+            nextTurn(user);
+            break;
 
         // truthful bsCaller with a Duke gets CC'ed
+        case (action === "ForeignAid") && (counterAction === "Duke") && (cced === true) :
             // bsCaller Redraws ( redrawInf(bsCaller, Duke) )
+            redrawInf(bsCaller, "Duke");
             // User -1 INF ( loseInf(user) )
+            loseInf(user);
+            nextTurn(user);
+            break;
 
         // Dishonest bsCaller without Duke gets CC'ed
+        case (action === "ForeignAid") && (counterAction === "noDuke") && (cced === true) :
             // bsCaller -1 INF ( loseInf(bsCaller) )
+            loseInf(bsCaller);
             // user +2 coins ( getCoin(user, 2) )
+            getCoin(user, 2);
+            break;
+    }
 };
 
 const wannaTax = (user, bsCaller) => {
