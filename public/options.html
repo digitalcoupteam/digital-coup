@@ -20,19 +20,17 @@
         <div class="container" id="navigation">
             <div class="row">
                 <div class="col-md-4">
-                    <a href="index.html" class="btn btn-primary btn-lg">Home</a>
+                    <!-- <a href="index.html" class="btn btn-primary btn-lg">Home</a> -->
                 </div>
                 <div class="col-md-4">
                     <!-- Button trigger modal -->
-                    <button type="button" id="createGameBtn" class="btn btn-primary" data-toggle="modal" data-target="#createModal">
-                        Create new game
+                    <button type="button" id="createGameBtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createModal">
+                        Create a Game
                     </button>
+                    <!-- Button trigger modal -->
+                    <a href="lobbies.html" class="btn btn-primary btn-lg">Join a Game</a>
                 </div>
                 <div class="col-md-4">
-                    <!-- Button trigger modal -->
-                    <button type="button" id="joinGameBtn" class="btn btn-primary">
-                        Join a game
-                    </button>
                 </div>
             </div>
         </div>
@@ -51,10 +49,21 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group mb-3">
+                        <select class="custom-select" id="inputGroupSelect02">
+                            <option selected>Select a Game to Play</option>
+                            <option value="1">Overthrow</option>
+                            <option value="2">Clue</option>
+                            <option value="3">Texas Hold'em</option>
+                        </select>
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="inputGroupSelect02">Games</label>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Enter new lobby name" id="newLobbyName"
                             aria-label="newLobbyName" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="newLobbyNameBtn">Button</button>
+                            <button class="btn btn-primary" type="button" id="newLobbyNameBtn">Create!</button>
                         </div>
                     </div>
 
