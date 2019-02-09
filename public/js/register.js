@@ -15,7 +15,7 @@ $("#register").on("submit", function (event) {
     $('#password-error').html("Password must match, try again!")
   
   } else {
-    $.post('/api/newUser', newUser)
+    $.post('/newUser', newUser)
       .then(() => {
         window.location.href = "/";
 
