@@ -2,14 +2,14 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/newUsers", function(req, res) {
+  app.get("/newUsers", function(req, res) {
     db.User.findAll().then(function(result) {
       res.json(result);
     });
   });
 
   // Create a new example
-  app.post("/api/newUser", function(req, res) {
+  app.post("/newUser", function(req, res) {
     const newUser = req.body;
     db.User.create({
       email: newUser.email,
@@ -22,7 +22,7 @@ module.exports = function(app) {
   });
 
 
-  app.post('/api/login', function(req, res) {
+  app.post('/login', function(req, res) {
     const attemptedLogin = req.body;
     console.log(attemptedLogin.loginUsername)
     db.User.findOne({
@@ -35,7 +35,8 @@ module.exports = function(app) {
         console.log('user exists')
         res.json(result);  
       } else {
-        console.log('no user exists')
+        console.log('no user exists');
+        res.json(result);  
       }
   });
 })
