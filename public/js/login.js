@@ -17,9 +17,10 @@ $("#loginUser").on("submit", function (event) {
               $('#loginPassword').val("");
 
         } else {
-            console.log(result);
             const newStoredName = loggerAttempt.loginUsername;
-            sessionStorage.setItem('lobbyCreator', newStoredName);
+            sessionStorage.setItem('currentUser', newStoredName);
+            // const username = loggerAttempt.loginUsername; 
+            console.log(result);
             window.location.href = "/options.html";
         }
 
