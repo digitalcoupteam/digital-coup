@@ -17,7 +17,7 @@ $('document').ready(() => {
         console.log(user2);
 
         for (let i = 0; i < data.length; i++) {
-            $('#lobby-table').html(`<tr data-id="${data[i].id}"><td>${data[i].lobbyName}</td><td>${data[i].user1}<td>`);
+            $('#lobby-table').append(`<tr data-id="${data[i].id}"><td>${data[i].lobbyName}</td><td>${data[i].user1}<td>`);
             if (!(user2 === null)) {
                 $(`#lobby-table`).append(`<td>${data[i].user2}</td>`);
             }
