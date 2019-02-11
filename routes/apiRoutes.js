@@ -76,12 +76,12 @@ app.put('/api/lobbies', function (req, res) {
   // });
 });
 
-app.get('/api/lobbies/all', function(req, res) {
-  db.Lobby.findAll({
+app.get('/api/:gamename/lobbies/all', function(req, res) { // api/overthrow/lobbies/all
+  // const desiredGameTable = `${req.params.gameName}lobbies`; //const desiredGameTable = overthrowlobbies
+  db.Lobby.findAll({    // db.overthrowlobbies.findAll()
     order: [
       ['id', 'DESC'],
-  ],
-  limit: 1
+  ]
   }).then(function(results) {
     res.json(results);
   });
