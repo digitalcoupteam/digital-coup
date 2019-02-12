@@ -6,10 +6,7 @@ $('document').ready(() => {
     const desiredURL = `/api/overthrow/lobbies/all`
 
     $.get(desiredURL, (data) => {
-        if (err) {
-            console.log(chalk.red(err));
-            throw err;
-        }
+
         console.log(data);
 
         let [lobby] = data
