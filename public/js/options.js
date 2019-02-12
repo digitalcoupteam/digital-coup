@@ -1,6 +1,9 @@
 $('document').ready(() => {
+    const Joi = require('joi');
+
     $('#newLobbyNameBtn').on('click', (event) => {
         event.preventDefault();
+        
 
         const newCreatedLobby = {
             newLobbyName: $('#newLobbyName').val().trim(),
