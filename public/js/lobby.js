@@ -1,5 +1,6 @@
 $('document').ready(() => {
     //build each individual route here
+    const chalk = require('chalk');
 
 
     let gamename = "overthrow";
