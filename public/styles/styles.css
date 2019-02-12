@@ -45,7 +45,9 @@ ul {
 .btn-primary:active {
   background-color: lightgray;
 }
-
+.play-button{
+  font-size: 25px;
+}
 /* .jumbotron {
   background-image: url("../../assets/images/1655690781_8bc3b3bd-4a79-4ff6-860e-4bafb4a8e1da.jpg");
   background-size: cover;
