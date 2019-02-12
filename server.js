@@ -5,7 +5,6 @@ const exphbs = require("express-handlebars");
 // const graphqlHttp = require('express-graphql');
 // const { buildSchema } = require('graphql')
 const db = require("./models");
-const chalk = require('chalk');
 
 
 const app = express();

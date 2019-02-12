@@ -1,6 +1,5 @@
 $('document').ready(() => {
     //build each individual route here
-    const chalk = require('chalk');
 
 
     let gamename = "overthrow";
@@ -18,8 +17,7 @@ $('document').ready(() => {
         console.log(user2);
 
         for (let i = 0; i < data.length; i++) {
-            console.log(chalk.blue(data[i]));
-            console.log(chalk.green('==============='));
+
             $('#lobby-table').append(`<tr data-id="${data[i].id}"><td>${data[i].lobbyName}</td><td>${data[i].user1}<td>`);
             if (!(user2 === null)) {
                 $(`#lobby-table`).append(`<td>${data[i].user2}</td>`);
