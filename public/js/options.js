@@ -1,5 +1,4 @@
 $('document').ready(() => {
-    const Joi = require('joi');
 
     $('#newLobbyNameBtn').on('click', (event) => {
         event.preventDefault();

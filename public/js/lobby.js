@@ -1,6 +1,4 @@
 $('document').ready(() => {
-    const chalk = require('chalk');
-
     //build each individual route here
 
 
